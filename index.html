@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Portal</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            background: url('pic4.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Light overlay for readability */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(2px);
+            z-index: 0;
+        }
+
+        /* Animated gradient light glow overlay */
+        body::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 20%, rgba(78,84,200,0.25), transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(143,148,251,0.25), transparent 50%);
+            animation: moveGlow 10s infinite alternate ease-in-out;
+            z-index: 0;
+        }
+
+        @keyframes moveGlow {
+            0% { background-position: 0% 0%, 100% 100%; }
+            100% { background-position: 100% 0%, 0% 100%; }
+        }
+
+        /* Floating icons animation */
+        .icon {
+            position: absolute;
+            width: 60px;
+            opacity: 0.15;
+            animation: floatIcons 10s infinite ease-in-out;
+            z-index: 1;
+        }
+
+        .icon:nth-child(1) { top: 10%; left: 8%; animation-delay: 0s; }
+        .icon:nth-child(2) { top: 25%; right: 12%; animation-delay: 2s; }
+        .icon:nth-child(3) { bottom: 18%; left: 22%; animation-delay: 4s; }
+        .icon:nth-child(4) { bottom: 10%; right: 18%; animation-delay: 6s; }
+
+        @keyframes floatIcons {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Glass card */
+        .container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 60px 80px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            z-index: 2;
+            animation: fadeIn 1.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 2.8em;
+            color: #fff;
+            margin-bottom: 25px;
+            text-shadow: 0 0 25px rgba(255,255,255,0.7);
+            letter-spacing: 1px;
+        }
+
+        p {
+            color: #f0f0f0;
+            margin-bottom: 35px;
+            font-size: 1.1em;
+        }
+
+        button {
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #4e54c8, #8f94fb);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: 0.4s ease;
+        }
+
+        button:hover {
+            transform: scale(1.07);
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating icons (you can replace these URLs with local PNGs/SVGs if preferred) -->
+    <img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png" class="icon" alt="Book Icon">
+    <img src="https://cdn-icons-png.flaticon.com/512/1048/1048982.png" class="icon" alt="Graduation Icon">
+    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png" class="icon" alt="Lightbulb Icon">
+    <img src="https://cdn-icons-png.flaticon.com/512/906/906175.png" class="icon" alt="Laptop Icon">
+
+    <!-- Main content -->
+    <div class="container">
+        <h1>Welcome to Student Portal</h1>
+        <p>Access your courses, grades, and announcements in one place.</p>
+        <button onclick="window.location.href='dashboard.jsp'">Go to Dashboard</button>
+    </div>
+
+    <footer>© 2025 Student Portal | Empowering Digital Learning</footer>
+</body>
+</html>
